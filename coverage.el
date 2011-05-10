@@ -1,3 +1,12 @@
+;; You can install coverage2el using el-get with the following source
+;; definition:
+;;
+;; (:name coverage2el
+;;        :type git
+;;        :url "git://github.com/nyergler/coverage2el.git"
+;;        :features "coverage"
+;;        )
+
 
 (defvar coverage-annotation-file ".coverage.el")
 (defvar coverage-annotations nil)
