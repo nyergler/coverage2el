@@ -113,9 +113,15 @@
   () ; forms run on mode entry/exit
 )
 
+(setq coverage-enabled-regex "work")
+
 (defun maybe-enable-coverage-mode ()
-  (if (string-match "/src/allmydata/" (buffer-file-name))
+  (message "foo")
+  (if (and coverage-enabled-regex
+	   (string-match coverage-enabled-regex (buffer-file-name)))
       (coverage-annotation-minor-mode t)
     ))
 
 (add-hook 'python-mode-hook 'maybe-enable-coverage-mode)
+
+(provide 'coverage)
